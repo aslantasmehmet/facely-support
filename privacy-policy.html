@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Facely Privacy Policy</title>
+    <meta
+      name="description"
+      content="Privacy Policy for Facely, including local data storage, AI analysis, OpenAI processing, subscriptions, deletion, and user rights."
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #050506;
+        --panel: #121216;
+        --panel-2: #19191f;
+        --text: #f7f7fb;
+        --muted: #b7b4c2;
+        --soft: #858291;
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #c64fe8;
+        --accent-2: #6877ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(198, 79, 232, 0.22), transparent 34rem),
+          radial-gradient(circle at top right, rgba(104, 119, 255, 0.2), transparent 30rem),
+          var(--bg);
+        color: var(--text);
+        font-family:
+          ui-sans-serif,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      a {
+        color: #dca8ff;
+      }
+
+      .wrap {
+        margin: 0 auto;
+        max-width: 980px;
+        padding: 48px 20px 72px;
+      }
+
+      .hero {
+        border: 1px solid var(--line);
+        border-radius: 34px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+        padding: 34px;
+      }
+
+      .eyebrow {
+        color: #d9b7ff;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        margin: 0 0 12px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(42px, 8vw, 76px);
+        letter-spacing: -0.06em;
+        line-height: 0.94;
+        margin: 0;
+      }
+
+      .summary {
+        color: var(--muted);
+        font-size: 18px;
+        margin: 22px 0 0;
+        max-width: 760px;
+      }
+
+      .meta {
+        color: var(--soft);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 13px;
+        font-weight: 700;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .pill {
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 12px;
+      }
+
+      .toc {
+        background: rgba(18, 18, 22, 0.82);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        margin: 24px 0;
+        padding: 22px;
+      }
+
+      .toc h2 {
+        margin-top: 0;
+      }
+
+      .toc ol {
+        columns: 2;
+        margin-bottom: 0;
+      }
+
+      section {
+        background: rgba(18, 18, 22, 0.78);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        margin-top: 18px;
+        padding: 26px;
+      }
+
+      h2 {
+        font-size: 26px;
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        margin: 0 0 14px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin: 24px 0 8px;
+      }
+
+      p {
+        color: var(--muted);
+        margin: 10px 0;
+      }
+
+      ul,
+      ol {
+        color: var(--muted);
+        padding-left: 22px;
+      }
+
+      li {
+        margin: 8px 0;
+      }
+
+      strong {
+        color: var(--text);
+      }
+
+      .notice {
+        background: linear-gradient(135deg, rgba(198, 79, 232, 0.16), rgba(104, 119, 255, 0.13));
+        border: 1px solid rgba(220, 168, 255, 0.28);
+        border-radius: 22px;
+        margin: 14px 0;
+        padding: 16px;
+      }
+
+      .notice p {
+        margin: 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 16px 0;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--line);
+        color: var(--muted);
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--text);
+      }
+
+      footer {
+        color: var(--soft);
+        font-size: 13px;
+        padding: 26px 4px 0;
+      }
+
+      @media (max-width: 720px) {
+        .hero,
+        section,
+        .toc {
+          border-radius: 22px;
+          padding: 20px;
+        }
+
+        .toc ol {
+          columns: 1;
+        }
+
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+
+        th {
+          display: none;
+        }
+
+        td {
+          border-top: 0;
+        }
+
+        td:first-child {
+          border-top: 1px solid var(--line);
+          color: var(--text);
+          font-weight: 800;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero">
+        <p class="eyebrow">Facely Privacy Policy</p>
+        <h1>Privacy Policy</h1>
+        <p class="summary">
+          This Privacy Policy explains how Facely handles photos, onboarding answers, AI reports,
+          AI Coach messages, subscriptions, reminders, and local app data. We have written it in a
+          direct way because face photos and AI analysis are sensitive and users should understand
+          exactly what happens before they continue.
+        </p>
+        <div class="meta">
+          <span class="pill">Effective date: June 19, 2026</span>
+          <span class="pill">App: Facely</span>
+          <span class="pill">Contact: support@venby.co</span>
+        </div>
+      </header>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#who-we-are">Who we are</a></li>
+          <li><a href="#short-version">Short version</a></li>
+          <li><a href="#data-we-process">Data we process</a></li>
+          <li><a href="#local-storage">Local-only storage</a></li>
+          <li><a href="#openai">How we use OpenAI</a></li>
+          <li><a href="#ai-consent">AI consent</a></li>
+          <li><a href="#subscriptions">Subscriptions and reinstalling</a></li>
+          <li><a href="#permissions">Device permissions</a></li>
+          <li><a href="#deletion">Deletion and uninstalling</a></li>
+          <li><a href="#sharing">Sharing and processors</a></li>
+          <li><a href="#children">Children and age</a></li>
+          <li><a href="#rights">Your rights</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <section id="who-we-are">
+        <h2>1. Who we are</h2>
+        <p>
+          Facely is a mobile application operated by Venby ("Facely", "we", "us", or "our").
+          Facely helps users upload or capture a face photo, answer onboarding questions, receive an
+          AI-generated appearance report, manage suggested routines and to-do items, and chat with an
+          AI Coach about face analysis, grooming, skin, hair, style, scan quality, and routines.
+        </p>
+        <p>
+          You can contact us at <a href="mailto:support@venby.co">support@venby.co</a> or by phone
+          at <a href="tel:+905449954404">+90 544 995 44 04</a>.
+        </p>
+        <div class="notice">
+          <p>
+            <strong>Important:</strong> Facely is not a medical, dermatology, mental health,
+            biometric identification, or surgical planning service. AI-generated outputs may be
+            inaccurate and should be treated as general informational and lifestyle guidance only.
+          </p>
+        </div>
+      </section>
+
+      <section id="short-version">
+        <h2>2. Short version</h2>
+        <ul>
+          <li>
+            <strong>No account is currently required.</strong> Facely can be used without creating a
+            login account in the app.
+          </li>
+          <li>
+            <strong>We do not currently maintain our own cloud database for your face photos,
+            reports, onboarding answers, chat history, or to-do items.</strong> These are stored on
+            your device unless they are sent to OpenAI for AI processing after your consent.
+          </li>
+          <li>
+            <strong>Your photo and onboarding answers are sent to OpenAI only after you accept AI
+            analysis consent.</strong> This is needed to generate your face report.
+          </li>
+          <li>
+            <strong>Your AI Coach messages are sent to OpenAI only after you accept AI Coach
+            consent.</strong> We also send limited context, such as your recent messages and report,
+            so the AI Coach can respond usefully.
+          </li>
+          <li>
+            <strong>Deleting the app deletes locally stored Facely data from that device.</strong>
+            This includes your saved photo, onboarding answers, reports, to-do items, reminder
+            choices, and local chat history, unless your operating system or backup settings keep an
+            app backup.
+          </li>
+          <li>
+            <strong>Your subscription can remain valid after reinstalling.</strong> App Store,
+            Google Play, and/or subscription infrastructure may be able to restore the subscription,
+            but your local face data and reports will not come back if we did not store them in a
+            cloud account or database.
+          </li>
+        </ul>
+      </section>
+
+      <section id="data-we-process">
+        <h2>3. Data we process</h2>
+        <p>
+          Depending on which features you use, Facely may process the following categories of data:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Data category</th>
+              <th>Examples</th>
+              <th>Why it is used</th>
+              <th>Where it is stored or sent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Onboarding answers</td>
+              <td>Gender selection, age, weakest attribute, goal level, motivation, routine commitment, chin projection preference, photo method, selected plan.</td>
+              <td>To personalize your report, routine, to-do suggestions, and AI Coach context.</td>
+              <td>Stored locally on your device. Sent to OpenAI for AI analysis after consent.</td>
+            </tr>
+            <tr>
+              <td>Face photo</td>
+              <td>A photo you take with the camera or choose from your photo library.</td>
+              <td>To generate your AI face report, score, feature breakdown, and progress comparisons.</td>
+              <td>Stored locally on your device. Sent to OpenAI for AI analysis after consent.</td>
+            </tr>
+            <tr>
+              <td>AI face report</td>
+              <td>Overall score, potential score, main improvement area, feature scores, insights, quick wins, timeline, routine items.</td>
+              <td>To show your analysis, report history, dashboard, and recommended actions.</td>
+              <td>Stored locally on your device. May be sent to OpenAI as context for progress scans or AI Coach after consent.</td>
+            </tr>
+            <tr>
+              <td>Progress scans</td>
+              <td>New face photo, previous report, score delta, improved or unchanged areas.</td>
+              <td>To compare your current scan with a prior report and update your plan.</td>
+              <td>Stored locally on your device. Sent to OpenAI for comparison after consent.</td>
+            </tr>
+            <tr>
+              <td>To-do and routine data</td>
+              <td>Recommended actions, completion dates, reminder times, active/inactive tasks.</td>
+              <td>To help you follow the routine and track daily actions.</td>
+              <td>Stored locally on your device. Relevant task context may be sent to OpenAI for progress recommendations.</td>
+            </tr>
+            <tr>
+              <td>AI Coach chat data</td>
+              <td>Your messages, assistant replies, recent conversation context.</td>
+              <td>To answer questions about your face report, style, skin, hair, grooming, routines, and scan quality.</td>
+              <td>Stored locally on your device. Sent to OpenAI after AI Coach consent.</td>
+            </tr>
+            <tr>
+              <td>Notification choices</td>
+              <td>Whether reminders are enabled, selected reminder times, notification identifiers.</td>
+              <td>To schedule local reminders for routines or to-do items.</td>
+              <td>Stored locally on your device and processed by your device operating system.</td>
+            </tr>
+            <tr>
+              <td>Subscription status</td>
+              <td>Weekly or yearly entitlement, purchase state, restore status.</td>
+              <td>To unlock paid features and verify access.</td>
+              <td>Handled by App Store, Google Play, and/or subscription infrastructure such as RevenueCat if enabled.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="local-storage">
+        <h2>4. Local-only storage and no current Facely cloud account database</h2>
+        <p>
+          Facely currently stores the main app experience on your device using local app storage.
+          This includes onboarding answers, selected photo metadata, local photo file, reports,
+          progress reports, to-do tasks, reminder choices, AI consent flags, and AI Coach messages.
+        </p>
+        <p>
+          As currently implemented, we do not run a Facely-owned backend database that permanently
+          stores your face photo, reports, onboarding answers, to-do list, or AI Coach history under
+          a user account. This means:
+        </p>
+        <ul>
+          <li>If you delete the app, your local Facely data is normally deleted from the device.</li>
+          <li>If you reinstall the app, your local reports and saved face photo will normally be gone.</li>
+          <li>If your phone is lost, replaced, reset, or restored without app data, your local Facely data may be gone.</li>
+          <li>We cannot restore local report history if it was never stored in a cloud account or database.</li>
+          <li>Operating system backups may behave differently depending on your iCloud, Google, device, or backup settings.</li>
+        </ul>
+        <p>
+          If we add an account system, cloud sync, analytics, or a server database in the future, we
+          will update this Privacy Policy and, where required, request additional consent.
+        </p>
+      </section>
+
+      <section id="openai">
+        <h2>5. How we use OpenAI</h2>
+        <p>
+          Facely uses OpenAI API technology to generate face reports, progress comparisons, and AI
+          Coach replies. OpenAI is a third-party AI service provider. When you use AI features, data
+          is sent from the app to OpenAI so the model can process it and return a response.
+        </p>
+        <h3>5.1 What is sent to OpenAI for the first AI face report</h3>
+        <ul>
+          <li>Your selected or captured face photo.</li>
+          <li>Your onboarding answers, such as age, gender selection, goals, motivation, weakest attribute, blocking factor, chin projection preference, and routine commitment.</li>
+          <li>A structured request asking OpenAI to generate a face analysis report in English.</li>
+        </ul>
+        <h3>5.2 What is sent to OpenAI for progress scans</h3>
+        <ul>
+          <li>Your new face photo.</li>
+          <li>Your previous AI report.</li>
+          <li>Your onboarding answers.</li>
+          <li>Your current to-do tasks when needed to decide whether tasks should be added or removed.</li>
+        </ul>
+        <h3>5.3 What is sent to OpenAI for AI Coach</h3>
+        <ul>
+          <li>Your AI Coach message.</li>
+          <li>Recent chat context so the AI can continue the conversation.</li>
+          <li>Your onboarding answers and face report, when available, so the response is personalized.</li>
+        </ul>
+        <h3>5.4 Why OpenAI receives this data</h3>
+        <p>
+          OpenAI receives this data only to provide AI functionality requested by you: generating a
+          report, comparing scans, or replying in AI Coach. Without sending the relevant data to an
+          AI model, these features cannot work as intended.
+        </p>
+        <h3>5.5 OpenAI policies and retention</h3>
+        <p>
+          OpenAI explains in its privacy materials that user content may include prompts and uploaded
+          content such as images, and that API/business data is governed separately from consumer
+          ChatGPT privacy terms. OpenAI may process API requests to provide, secure, and maintain its
+          services, and may retain data as described in its applicable policies, agreements, and legal
+          requirements.
+        </p>
+        <p>
+          You can review OpenAI's own privacy information at
+          <a href="https://openai.com/policies/privacy-policy/">openai.com/policies/privacy-policy</a>
+          and enterprise/API privacy information at
+          <a href="https://openai.com/enterprise-privacy/">openai.com/enterprise-privacy</a>.
+        </p>
+        <div class="notice">
+          <p>
+            <strong>Important:</strong> We do not control OpenAI's infrastructure, security, data
+            retention, subprocessors, or legal obligations. We send only the data needed for the AI
+            feature you choose to use.
+          </p>
+        </div>
+      </section>
+
+      <section id="ai-consent">
+        <h2>6. AI consent and control</h2>
+        <p>
+          Facely requires explicit in-app consent before AI processing starts.
+        </p>
+        <ul>
+          <li>
+            <strong>AI analysis consent:</strong> Before your photo and onboarding answers are sent
+            to OpenAI for the face report, the app shows an AI analysis consent notice. If you do not
+            accept, the analysis does not start.
+          </li>
+          <li>
+            <strong>AI Coach consent:</strong> Before your AI Coach message and context are sent to
+            OpenAI, the app shows an AI Coach consent notice. If you do not accept, the message is not
+            sent.
+          </li>
+          <li>
+            <strong>Local consent record:</strong> Your consent choices are stored locally on your
+            device so we do not ask every time.
+          </li>
+          <li>
+            <strong>Resetting consent:</strong> Deleting the app or resetting app data removes the
+            local consent record, and the app may ask again after reinstalling.
+          </li>
+        </ul>
+        <p>
+          Do not upload or type information you do not want processed by AI systems. Avoid sending
+          sensitive identity documents, medical records, passwords, financial information, precise
+          location, or other highly private information.
+        </p>
+      </section>
+
+      <section id="biometrics">
+        <h2>7. Face photos, appearance analysis, and biometrics</h2>
+        <p>
+          Facely analyzes face photos to provide appearance-related feedback, including visible
+          structure, grooming, skin presentation, hair/style context, scan quality, and routine
+          suggestions. Facely is not designed to identify you, verify your identity, authenticate
+          you, compare you against a database of people, or perform face recognition.
+        </p>
+        <p>
+          However, face photos can be sensitive personal data in many jurisdictions. You should only
+          upload your own photo or a photo you have the right and permission to use. Do not upload a
+          photo of another person without their permission.
+        </p>
+      </section>
+
+      <section id="subscriptions">
+        <h2>8. Subscriptions, purchases, reinstalling, and what survives</h2>
+        <p>
+          Facely may offer paid subscriptions, such as weekly or yearly plans. Purchases are handled
+          by the Apple App Store, Google Play, and/or subscription management infrastructure such as
+          RevenueCat if enabled in the app.
+        </p>
+        <h3>8.1 What subscription providers may process</h3>
+        <ul>
+          <li>Purchase status, entitlement status, renewal status, cancellation status, and restore status.</li>
+          <li>Store transaction identifiers or app-user identifiers used to validate access.</li>
+          <li>Device, app, and transaction metadata required for subscription operations.</li>
+        </ul>
+        <h3>8.2 What happens if you delete and reinstall the app</h3>
+        <ul>
+          <li>Your subscription may still be valid and may be restorable through the app store or subscription provider.</li>
+          <li>Your local Facely data, including photo, reports, AI Coach history, onboarding answers, and to-do items, will normally be gone if the app was deleted.</li>
+          <li>A restored subscription does not automatically restore local face analysis data unless that data was separately backed up or synced.</li>
+          <li>Because there is currently no required login account and no Facely cloud database for reports, we generally cannot recover deleted local reports for you.</li>
+        </ul>
+        <h3>8.3 Canceling a subscription</h3>
+        <p>
+          Deleting the app does not automatically cancel your subscription. You must cancel through
+          the Apple App Store, Google Play, or the applicable purchase platform. Subscription billing
+          and refund rules are controlled by the platform where you purchased.
+        </p>
+      </section>
+
+      <section id="permissions">
+        <h2>9. Device permissions</h2>
+        <h3>9.1 Camera</h3>
+        <p>
+          Camera permission is used only when you choose to take a face photo inside the app. If you
+          deny camera permission, you can use the photo library option if available.
+        </p>
+        <h3>9.2 Photo library</h3>
+        <p>
+          Photo library permission is used only when you choose to select a photo from your device.
+          We do not scan your full library. We use the image you select.
+        </p>
+        <h3>9.3 Notifications</h3>
+        <p>
+          Notification permission is used to schedule reminders for routines, to-do items, or
+          membership-related prompts if enabled. You can disable notifications in your device
+          settings.
+        </p>
+        <h3>9.4 Local storage</h3>
+        <p>
+          The app stores data locally so your dashboard, report, chat history, and to-do list remain
+          available after closing and reopening the app.
+        </p>
+      </section>
+
+      <section id="how-we-use-data">
+        <h2>10. How we use data</h2>
+        <p>We use data for the following purposes:</p>
+        <ul>
+          <li>To provide the core app experience.</li>
+          <li>To generate AI face analysis reports.</li>
+          <li>To generate AI progress comparisons.</li>
+          <li>To provide AI Coach replies.</li>
+          <li>To create and manage routine and to-do suggestions.</li>
+          <li>To store your local report history on the device.</li>
+          <li>To schedule local reminders if you enable notifications.</li>
+          <li>To verify paid subscription access.</li>
+          <li>To respond to support requests.</li>
+          <li>To comply with legal obligations and protect the security, integrity, and lawful operation of the app.</li>
+        </ul>
+      </section>
+
+      <section id="sharing">
+        <h2>11. Sharing and third-party processors</h2>
+        <p>
+          We do not sell your face photo, AI report, chat history, or onboarding answers. We may
+          share or transmit data only as needed for the app features and operations described in this
+          policy.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Provider or category</th>
+              <th>Purpose</th>
+              <th>Data involved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OpenAI</td>
+              <td>AI report generation, progress comparison, AI Coach replies.</td>
+              <td>Photo, onboarding answers, reports, recent chat messages, and relevant context after consent.</td>
+            </tr>
+            <tr>
+              <td>Apple App Store / Google Play</td>
+              <td>Payment processing, subscription billing, purchase validation, restore purchases.</td>
+              <td>Payment and transaction data handled by the store platforms.</td>
+            </tr>
+            <tr>
+              <td>RevenueCat or similar subscription infrastructure, if enabled</td>
+              <td>Subscription entitlement management and restore support.</td>
+              <td>Subscription status, app-user identifiers, transaction metadata, device/app metadata.</td>
+            </tr>
+            <tr>
+              <td>Operating system services</td>
+              <td>Camera, photo picker, local notifications, local storage.</td>
+              <td>Permission status, selected photo, reminder schedules, local app data.</td>
+            </tr>
+            <tr>
+              <td>Support tools</td>
+              <td>Responding to emails, support messages, legal requests, or user questions.</td>
+              <td>Information you choose to send to us, such as email, phone number, screenshots, or support details.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          We may also disclose information if required by law, legal process, government request,
+          enforcement of our terms, protection of rights and safety, fraud prevention, or business
+          transfer such as merger, acquisition, financing, reorganization, or sale of assets.
+        </p>
+      </section>
+
+      <section id="deletion">
+        <h2>12. Deletion, uninstalling, and data removal</h2>
+        <h3>12.1 Deleting the app</h3>
+        <p>
+          Because Facely currently stores the main app data locally, deleting the app normally
+          removes locally stored Facely data from that device, including:
+        </p>
+        <ul>
+          <li>Saved face photo.</li>
+          <li>Onboarding answers.</li>
+          <li>AI face reports and progress reports.</li>
+          <li>AI Coach local chat history.</li>
+          <li>To-do tasks, completion history, and reminder choices.</li>
+          <li>Local consent choices.</li>
+        </ul>
+        <p>
+          Some device backups may preserve app data depending on your operating system and backup
+          settings. You can manage those settings through Apple, Google, or your device provider.
+        </p>
+        <h3>12.2 Deleting data from OpenAI</h3>
+        <p>
+          When you consent to AI processing, relevant data is transmitted to OpenAI. Requests to
+          delete or exercise rights over data processed by OpenAI may be subject to OpenAI's policies,
+          controls, retention rules, and legal obligations. You can contact us and we will help route
+          your request where possible, but we do not directly control OpenAI's systems.
+        </p>
+        <h3>12.3 Contacting us for deletion</h3>
+        <p>
+          Because we currently do not maintain a Facely cloud database for your local reports or
+          photos, there may be no server-side Facely record for us to delete. If you contacted
+          support, we may have the support message you sent us. You can ask us to delete support
+          correspondence where legally permitted by emailing
+          <a href="mailto:support@venby.co">support@venby.co</a>.
+        </p>
+      </section>
+
+      <section id="retention">
+        <h2>13. Retention</h2>
+        <ul>
+          <li>
+            <strong>Local app data:</strong> Kept on your device until you delete it through app
+            reset features, delete the app, clear device storage, or your operating system removes it.
+          </li>
+          <li>
+            <strong>AI processing data:</strong> Processed by OpenAI according to OpenAI's applicable
+            policies, customer terms, retention practices, and legal requirements.
+          </li>
+          <li>
+            <strong>Subscription records:</strong> Retained by Apple, Google, RevenueCat, or similar
+            services as needed for billing, tax, fraud prevention, accounting, customer support, and
+            legal compliance.
+          </li>
+          <li>
+            <strong>Support messages:</strong> Retained as long as needed to respond, maintain
+            records, prevent abuse, resolve disputes, or comply with legal obligations.
+          </li>
+        </ul>
+      </section>
+
+      <section id="international">
+        <h2>14. International data transfers</h2>
+        <p>
+          OpenAI, app store providers, subscription infrastructure, email providers, and support
+          tools may process data in countries other than where you live. Privacy laws in those
+          countries may differ from your local laws. Where required, data transfers are handled under
+          applicable legal mechanisms used by the relevant provider.
+        </p>
+      </section>
+
+      <section id="rights">
+        <h2>15. Your privacy rights</h2>
+        <p>
+          Depending on where you live, you may have rights to access, correct, delete, restrict,
+          object to processing, withdraw consent, or receive a copy of certain personal data. You may
+          also have the right to complain to a data protection authority.
+        </p>
+        <p>
+          Because most Facely data is stored locally on your device, the fastest way to remove it is
+          usually to delete the app or reset app data. For support records or questions, contact us at
+          <a href="mailto:support@venby.co">support@venby.co</a>.
+        </p>
+        <p>
+          If your request involves data processed by OpenAI, Apple, Google, RevenueCat, or another
+          provider, you may also need to use that provider's privacy tools or contact channels.
+        </p>
+      </section>
+
+      <section id="children">
+        <h2>16. Children and users under 18</h2>
+        <p>
+          Facely is not intended for children under 13. Users under 18 should use Facely only with
+          permission and supervision from a parent or guardian. If you believe a child has provided
+          personal data through Facely without appropriate permission, contact us at
+          <a href="mailto:support@venby.co">support@venby.co</a>.
+        </p>
+      </section>
+
+      <section id="security">
+        <h2>17. Security</h2>
+        <p>
+          We use reasonable technical and organizational measures appropriate for the app's current
+          architecture. Local app data is stored using device app storage. However, no storage system,
+          internet transmission, API provider, device, or operating system is perfectly secure.
+        </p>
+        <p>
+          You are responsible for securing your device, using device lock features, avoiding uploads
+          of sensitive unrelated content, and keeping your operating system up to date.
+        </p>
+      </section>
+
+      <section id="limitations">
+        <h2>18. AI limitations and user responsibility</h2>
+        <p>
+          AI-generated reports and AI Coach replies are probabilistic and may be incomplete,
+          inaccurate, subjective, or affected by lighting, angle, image quality, facial expression,
+          grooming, camera distortion, and other factors. Facely does not provide medical diagnosis,
+          treatment, psychological counseling, professional dermatology advice, nutrition plans, or
+          surgical recommendations.
+        </p>
+        <p>
+          You should not rely on Facely for medical, mental health, legal, financial, or safety
+          decisions. If you have medical or mental health concerns, consult a qualified professional.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2>19. Changes to this Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. If we make material changes, we may
+          notify you in the app, on this page, or through another reasonable method. The effective
+          date at the top shows when this policy became effective.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>20. Contact</h2>
+        <p>
+          If you have questions, privacy requests, deletion requests, subscription privacy questions,
+          or concerns about AI processing, contact us:
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:support@venby.co">support@venby.co</a></li>
+          <li>Phone: <a href="tel:+905449954404">+90 544 995 44 04</a></li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>
+          Facely Privacy Policy. Effective June 19, 2026. This page describes the current app
+          behavior as implemented at the time of publication.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
