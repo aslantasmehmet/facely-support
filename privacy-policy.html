@@ -248,7 +248,7 @@
           exactly what happens before they continue.
         </p>
         <div class="meta">
-          <span class="pill">Effective date: June 19, 2026</span>
+          <span class="pill">Effective date: June 24, 2026</span>
           <span class="pill">App: Facely</span>
           <span class="pill">Contact: support@venby.co</span>
         </div>
@@ -263,6 +263,7 @@
           <li><a href="#local-storage">Local-only storage</a></li>
           <li><a href="#openai">How we use OpenAI</a></li>
           <li><a href="#ai-consent">AI consent</a></li>
+          <li><a href="#biometrics">Face data: collection, use, sharing, and retention</a></li>
           <li><a href="#subscriptions">Subscriptions and reinstalling</a></li>
           <li><a href="#permissions">Device permissions</a></li>
           <li><a href="#deletion">Deletion and uninstalling</a></li>
@@ -427,8 +428,10 @@
         <h2>5. How we use OpenAI</h2>
         <p>
           Facely uses OpenAI API technology to generate face reports, progress comparisons, and AI
-          Coach replies. OpenAI is a third-party AI service provider. When you use AI features, data
-          is sent from the app to OpenAI so the model can process it and return a response.
+          Coach replies. OpenAI is a third-party AI service provider. When you use AI features, the
+          app sends the relevant data through a Facely-operated Cloudflare Worker proxy to OpenAI so
+          the model can process it and return a response. The proxy keeps the OpenAI API credential
+          out of the mobile app.
         </p>
         <h3>5.1 What is sent to OpenAI for the first AI face report</h3>
         <ul>
@@ -457,11 +460,17 @@
         </p>
         <h3>5.5 OpenAI policies and retention</h3>
         <p>
-          OpenAI explains in its privacy materials that user content may include prompts and uploaded
-          content such as images, and that API/business data is governed separately from consumer
-          ChatGPT privacy terms. OpenAI may process API requests to provide, secure, and maintain its
-          services, and may retain data as described in its applicable policies, agreements, and legal
-          requirements.
+          Facely sends OpenAI Responses API requests with server-side response storage disabled
+          (<code>store: false</code>). OpenAI states that data sent through its API is not used to
+          train or improve OpenAI models unless the API customer explicitly opts in. Facely has not
+          opted in to share API data for model training.
+        </p>
+        <p>
+          OpenAI states that its default abuse-monitoring logs may contain prompts, responses,
+          uploaded images, and related metadata and may be retained for up to 30 days. OpenAI may
+          retain data longer when required by law or when reasonably necessary to protect its
+          services or third parties from harm. Facely does not currently represent that its OpenAI
+          project has Zero Data Retention approval.
         </p>
         <p>
           You can review OpenAI's own privacy information at
@@ -511,7 +520,74 @@
       </section>
 
       <section id="biometrics">
-        <h2>7. Face photos, appearance analysis, and biometrics</h2>
+        <h2>7. Face data: collection, use, sharing, storage, and retention</h2>
+        <h3>7.1 Face data we collect and derive</h3>
+        <p>
+          When you choose to take or upload a scan, Facely processes the face photo you select. For
+          purposes of this policy, "face data" means: (a) that selected or captured face photo; and
+          (b) appearance observations generated from the photo, such as visible facial structure,
+          symmetry, jawline and chin presentation, skin presentation, hair and grooming context,
+          scan quality, feature scores, an overall score, and progress observations.
+        </p>
+        <p>
+          Facely does not create or store a face-recognition template, Face ID profile, identity
+          embedding, facial landmark database, or biometric identifier used to identify or
+          authenticate a person. Facely does not compare a face against a database of people.
+        </p>
+        <h3>7.2 Complete uses of face data</h3>
+        <ul>
+          <li>Generate the initial AI appearance report and feature-level scores.</li>
+          <li>Provide visible-feature, scan-quality, grooming, skin-presentation, hair, and style observations.</li>
+          <li>Create personalized quick wins, routines, to-do suggestions, and 7/30/90-day guidance.</li>
+          <li>Compare a new progress photo with the prior locally stored report and describe possible changes.</li>
+          <li>Display the selected photo and generated reports locally inside the app.</li>
+          <li>Use the generated report, but not the face photo itself, as optional context for AI Coach replies.</li>
+        </ul>
+        <p>
+          Face data is not used for advertising, tracking, eligibility decisions, identity
+          verification, law-enforcement identification, or sale to data brokers.
+        </p>
+        <h3>7.3 Sharing and storage of face data</h3>
+        <ul>
+          <li>
+            <strong>On your device:</strong> The selected photo and generated report are stored in
+            Facely's local app storage so you can view reports and progress history.
+          </li>
+          <li>
+            <strong>Cloudflare:</strong> The photo and analysis request pass through a
+            Facely-operated Cloudflare Worker acting as a transport proxy. The Worker has no KV, D1,
+            R2, database, or other persistent storage binding, and the Worker code does not write
+            face photos or request bodies to persistent storage or custom logs.
+          </li>
+          <li>
+            <strong>OpenAI:</strong> The photo and relevant onboarding context are disclosed to
+            OpenAI solely to generate the requested report or progress comparison. OpenAI returns
+            the generated result to the app through the Worker.
+          </li>
+          <li>
+            <strong>Other providers:</strong> Apple and RevenueCat process subscription information,
+            but Facely does not send face photos or AI-derived face observations to them.
+          </li>
+        </ul>
+        <h3>7.4 Retention and deletion of face data</h3>
+        <ul>
+          <li>
+            <strong>On-device face photo and reports:</strong> Retained until you delete the app,
+            clear its app data, or the operating system removes the data. Device backups may retain
+            app data according to your Apple or device backup settings.
+          </li>
+          <li>
+            <strong>Facely Cloudflare Worker:</strong> Not intentionally retained in persistent
+            storage by the Worker. The request exists transiently while it is forwarded and the
+            response is returned.
+          </li>
+          <li>
+            <strong>OpenAI API:</strong> Facely disables Responses API application-state storage.
+            OpenAI may retain customer content, including image inputs, in abuse-monitoring logs for
+            up to 30 days, unless longer retention is legally required or reasonably necessary to
+            prevent harm.
+          </li>
+        </ul>
         <p>
           Facely analyzes face photos to provide appearance-related feedback, including visible
           structure, grooming, skin presentation, hair/style context, scan quality, and routine
@@ -612,6 +688,11 @@
           </thead>
           <tbody>
             <tr>
+              <td>Cloudflare</td>
+              <td>Transport proxy between the mobile app and OpenAI; protection of the server-side API credential.</td>
+              <td>Face photo, onboarding answers, report context, and chat requests pass transiently through the Worker.</td>
+            </tr>
+            <tr>
               <td>OpenAI</td>
               <td>AI report generation, progress comparison, AI Coach replies.</td>
               <td>Photo, onboarding answers, reports, recent chat messages, and relevant context after consent.</td>
@@ -685,12 +766,17 @@
         <h2>13. Retention</h2>
         <ul>
           <li>
-            <strong>Local app data:</strong> Kept on your device until you delete it through app
-            reset features, delete the app, clear device storage, or your operating system removes it.
+            <strong>Local app data:</strong> Kept on your device until you delete the app, clear its
+            app data through operating-system controls, or your operating system removes it.
           </li>
           <li>
-            <strong>AI processing data:</strong> Processed by OpenAI according to OpenAI's applicable
-            policies, customer terms, retention practices, and legal requirements.
+            <strong>Cloudflare Worker request data:</strong> Not intentionally stored by Facely's
+            Worker. Request bodies are processed transiently without a configured persistent storage binding.
+          </li>
+          <li>
+            <strong>OpenAI API processing data:</strong> Responses API application-state storage is
+            disabled. OpenAI may retain abuse-monitoring logs containing customer content for up to
+            30 days, or longer when legally required or reasonably necessary to prevent harm.
           </li>
           <li>
             <strong>Subscription records:</strong> Retained by Apple, Google, RevenueCat, or similar
@@ -793,7 +879,7 @@
 
       <footer>
         <p>
-          Facely Privacy Policy. Effective June 19, 2026. This page describes the current app
+          Facely Privacy Policy. Effective June 24, 2026. This page describes the current app
           behavior as implemented at the time of publication.
         </p>
       </footer>
